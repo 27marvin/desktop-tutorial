@@ -1,0 +1,603 @@
+<script>
+  //animation slide ups
+  const animatedElements = document.querySelectorAll(".animate-up");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = "running";
+      }
+    });
+  });
+
+  animatedElements.forEach((el) => {
+    el.style.animationPlayState = "paused";
+    observer.observe(el);
+  });
+</script>
+
+<style>
+  * {
+    background-color: rgb(0, 0, 0);
+    font-family: "Orbitron", sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  /* HEADER logo */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 66px;
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    background-color: rgba(0, 0, 0, 0.616);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  header .logo {
+    float: left;
+    height: inherit;
+    font-size: large;
+    margin-left: 3rem;
+    color: rgb(255, 255, 255);
+    font-family: "Orbitron", sans-serif;
+    background-color: transparent;
+  }
+  header .logo-text {
+    background-color: transparent;
+    font-size: 45px;
+    font-weight: lighter;
+    margin: 8px;
+    color: #ffffff;
+    text-shadow:
+      0 0 2px #ffffffe4,
+      0 0 2px #e4e4e4,
+      0 0 15px #11ff0086;
+  }
+  header span {
+    background-color: transparent;
+    font-weight: lighter;
+    color: #019a01;
+  }
+  /* NAVBAR */
+  header ul {
+    color: rgb(255, 255, 255);
+    display: flex;
+    float: right;
+    margin: 23px;
+    padding: 0px;
+    list-style: none;
+    margin-top: 3px;
+    margin-left: 30px;
+    margin-right: 60px;
+    background-color: transparent;
+  }
+
+  header ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-left: 15px;
+    margin-right: 30px;
+    font-family: "Orbitron", sans-serif;
+    background-color: transparent;
+  }
+  a {
+    background-color: transparent;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: color 0.5s ease;
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: limegreen;
+    transition: width 1s ease;
+  }
+  a:hover::after {
+    width: 100%;
+  }
+  a:hover {
+    color: limegreen;
+  }
+
+  /* HOME SECTION */
+  .home {
+    background-color: transparent;
+  }
+  .home-section {
+    margin-top: 50px;
+    background: radial-gradient(circle, #1f1f1fd3, #000);
+  }
+  .home h1 {
+    background-color: transparent;
+    font-size: 50px;
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #f3f3f3, #48886e, #02af47);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Orbitron", sans-serif;
+    margin-left: 40px;
+  }
+
+  /*animation entrance*/
+  .animate-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1.9s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /*all sections */
+  section {
+    height: 100vh;
+    padding-top: 25px;
+  }
+  /* SECTION GALLERY */
+  .gallery h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 50px;
+    font-size: 3rem;
+    font-weight: bold;
+    /* This css code is for dradient of text*/
+    background: linear-gradient(13deg, #c9e3cd, #3d715c, #106d35);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 40px;
+    background-color: transparent;
+  }
+  .gallery-section {
+    background-color: #22222260;
+  }
+  .gallery {
+    background-color: transparent;
+  }
+
+  /* image handle*/
+  .all {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: transparent;
+  }
+  .clip1 {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    cursor: pointer;
+  }
+  /* pics*/
+  .profile-card {
+    position: relative;
+    border: solid white 1px;
+    width: 130px;
+    height: 150px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(212, 248, 4, 0.6);
+    border: 4px solid #003400;
+    animation: glow 2s infinite alternate;
+  }
+  .profile-card:hover {
+    transform: scale(1.1);
+  }
+
+  .profile-card img {
+    background-color: green;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1.1);
+    cursor: pointer;
+    display: block;
+    object-fit: cover;
+    background: linear-gradient(90deg, #bde4be, #2d6951, #018135);
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px #184b01;
+    }
+    to {
+      box-shadow: 0 0 20px #8cfe02;
+    }
+  }
+  /* SECTION ABOUT */
+  .about h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 50px;
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #f3f3f3, #48886e, #02af47);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Orbitron", sans-serif;
+    margin-left: 40px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #666;
+  }
+
+  /*contact*/
+  .contact-icons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .icon {
+    font-size: 35px;
+    color: #fff;
+    background-color: #2222222d;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow:
+      0 0 10px #005b00,
+      0 0 20px #11a700;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .icon:hover {
+    transform: scale(1.3);
+    box-shadow:
+      0 0 20px #ff00ff,
+      0 0 40px #ff00ff;
+  }
+  .instagram:hover {
+    box-shadow:
+      0 0 20px #ed3170,
+      0 0 40px #ee3975;
+  }
+  .facebook:hover {
+    box-shadow:
+      0 0 20px #4b79dc,
+      0 0 40px #3763c0;
+  }
+  .telegram:hover {
+    box-shadow:
+      0 0 20px #009ae7,
+      0 0 40px #00a2f3;
+  }
+  .email:hover {
+    box-shadow:
+      0 0 20px #00ffcc,
+      0 0 40px #00ffcc;
+  }
+
+  /*css for logo img*/
+  .logo-container {
+    position: relative;
+    width: 250px;
+    height: auto;
+    background-color: transparent;
+  }
+
+  .logo-img {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 10px #00f7ff);
+    animation:
+      coloring 2s infinite,
+      flicker 1.6s infinite;
+    transition: transform 0.3s ease;
+  }
+
+  .logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px #00f7ff);
+  }
+
+  @keyframes coloring {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 13px #a40000);
+    }
+    50% {
+      filter: drop-shadow(0 0 23px #4b0096);
+    }
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    10% {
+      opacity: 0.8;
+    }
+    20% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 0.7;
+    }
+    40% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.85;
+    }
+    60% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 0.85;
+    }
+    80% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 0.87;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark System Website</title>
+    <!--link for Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <!--link for icons in contact-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1 style="font-weight: 400" class="logo-text">
+          DARK <span>SYSTEM</span>
+        </h1>
+      </div>
+      <nav style="background-color: transparent">
+        <ul>
+          <li style="background-color: transparent">
+            <a href="#home">Home</a>
+          </li>
+          <li style="background-color: transparent">
+            <a href="#gallery">Portfolio</a>
+          </li>
+          <li style="background-color: transparent">
+            <a href="#about">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!--home section-->
+    <section
+      style="padding-top: 120px"
+      id="home"
+      class="home-section animate-up"
+    >
+      <div class="home">
+        <h1>
+          WELCOME TO OUR WEBSITE <br />
+          -EXPLORE AND ENJOY!
+        </h1>
+        <h4
+          style="
+            letter-spacing: 3px;
+            margin-left: 30px;
+            font-size: 20px;
+            font-weight: lighter;
+            color: rgb(255, 255, 255);
+            background-color: transparent;
+          "
+        >
+          This site is a collaborative portfolio built by our team<br />
+          to showcase what we’ve learned, created, <br />
+          and explored in web development. <br />It’s a reflection of our
+          growth, creativity, and teamwork.
+        </h4>
+      </div>
+      <div style="margin-left: 900px; margin-top: -26%" class="logo-container">
+        <img src="pics/logo.png" alt="Logo" class="logo-img" />
+      </div>
+    </section>
+    <!--portfolio section-->
+    <section id="gallery" class="gallery-section animate-up">
+      <div class="gallery">
+        <h1>Portfolio</h1>
+        <div class="all">
+          <!--mj's portfolio-->
+          <div class="clip1">
+            <div class="profile-card">
+              <a href="portfolio/mjPortfolio.html">
+                <img src="pics/mjpic.png" alt="Marvin Jay Diego" />
+              </a>
+            </div>
+            <p style="margin-top: 10px; background-color: transparent">
+              Marvin Jay Diego
+            </p>
+          </div>
+          <!--dan's portfolio-->
+          <div class="clip1">
+            <div class="profile-card">
+              <a href="portfolio/danportfolio.html">
+                <img
+                  src="pics/dan2-removebg-preview.png"
+                  alt="Dan Eric Caintoy"
+                />
+              </a>
+            </div>
+            <p style="margin-top: 10px; background-color: transparent">
+              Dan Eric Caintoy
+            </p>
+          </div>
+          <!--raon's portfolio-->
+          <div class="clip1">
+            <div class="profile-card">
+              <a href="portfolio/raonPortfolio.html">
+                <img
+                  src="pics/raon-removebg-preview.png"
+                  alt="Mark Louie Raon"
+                />
+              </a>
+            </div>
+            <p style="margin-top: 10px; background-color: transparent">
+              Mark Louie Raon
+            </p>
+          </div>
+          <!--yomel's portfolio-->
+          <div class="clip1">
+            <div class="profile-card">
+              <a href="portfolio/yomelPortfolio.html">
+                <img
+                  src="pics/yomel-removebg-preview.png"
+                  alt="Leaomel Tabares"
+                />
+              </a>
+            </div>
+            <p style="margin-top: 10px; background-color: transparent">
+              Leaomel Tabares
+            </p>
+          </div>
+          <!--fortuna's portfolio-->
+          <div class="clip1">
+            <div class="profile-card">
+              <a href="portfolio/michaelportfolio.html">
+                <img src="pics/mictrans.png" alt="Michael Fortuna" />
+              </a>
+            </div>
+            <p style="margin-top: 10px; background-color: transparent">
+              Michael Fortuna
+            </p>
+          </div>
+          <!--aquino's portfolio-->
+          <div class="clip1">
+            <div class="profile-card">
+              <a href="portfolio/queenieportfolio.html">
+                <img src="pics/aquino.png" alt="Quinee Jane Aquino" />
+              </a>
+            </div>
+            <p style="margin-top: 10px; background-color: transparent">
+              Queenie Jane Cassandra Aquino
+            </p>
+          </div>
+          <!--kem's portfolio-->
+          <div class="clip1">
+            <div class="profile-card">
+              <a href="portfolio/kemportfolio.html">
+                <img
+                  src="pics/kem-removebg-preview.png"
+                  alt="Kemberly Silastre"
+                />
+              </a>
+            </div>
+            <p style="margin-top: 10px; background-color: transparent">
+              Kemberly Silastre
+            </p>
+          </div>
+          <!--bhea's portfolio-->
+          <div class="clip1">
+            <div class="profile-card">
+              <a href="portfolio/bheaportfolio.html">
+                <img
+                  src="pics/bhea-removebg-preview.png"
+                  alt="Bhea Macadangdang"
+                />
+              </a>
+            </div>
+            <p style="margin-top: 10px; background-color: transparent">
+              Bhea Macadangdang
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section animate-up">
+      <div class="about">
+        <h1>Contact Us</h1>
+        <br />
+        <div class="contact-icons">
+          <a
+            href="https://www.instagram.com/yourusername/"
+            target="_blank"
+            class="icon instagram"
+            title="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="#home"
+            target="_blank"
+            class="icon facebook"
+            title="Facebook"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://t.me/yourusername"
+            target="_blank"
+            class="icon telegram"
+            title="Telegram"
+          >
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+          <a href="#home" class="icon email" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer>&copy; 2025 Dark System. All rights reserved.</footer>
+  </body>
+</html>
