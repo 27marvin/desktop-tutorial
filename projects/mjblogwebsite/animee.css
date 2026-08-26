@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(173, 173, 173);
+    
+}
+
+header{
+    background-color: 1b1b1b;
+    height: 66px;
+    color: white;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+body{
+    padding: 0px;
+    margin-left: 20px;
+    background: rgb(0, 0, 0);
+    min-height: 100vh;
+  
+   
+}
+header .logo{
+    float: left;
+    height: inherit;
+   font-size: xx-large;
+    margin-left: 3rem; 
+}
+header .logo-text span{
+    color: rgb(0, 0, 0);
+    border: 10rem;
+    background-size: 20rem;
+    background-color: #fa7000;
+    border-radius: 5px;
+    margin-left: 0.3rem;
+}
+header .logo-text {
+    color: white;
+    margin: 8px;  
+}
+
+header ul{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: none;
+    margin: 23px;
+    padding: 0px;
+    list-style: none; 
+    margin-top: 50px;
+    margin-left: 30px;
+
+
+}
+
+header ul li a{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(173, 173, 173);
+    margin-left: 15px;
+    margin-right: 2opx;
+    
+}
+header ul .h{
+   
+    border: 1px;
+    background-size: 3rem;
+    background-color: #fa700037;
+    border-radius: 5px;
+   
+}
+header ul li a:hover{
+    color: rgb(254, 249, 243);
+    transition: 0.5s;
+}
+.vid{
+  
+    border: 2px solid gray;
+    height: 410PX;
+    margin-right:50px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    width: 804px;
+    
+    
+}
+.video1{
+    width: 800px;
+    height: 400px;
+}
+.hvid{
+    margin: 10px;
+}
+.slider{
+    width: 100%;
+    height: 55vh;
+    overflow-x: scroll;
+    scrollbar-width: none;
+   
+   
+    
+}
+.slider::-webkit-scrollbar{
+    display: none;
+}
+.slidera{
+    width: max-content;
+    height: inherit;
+    display: flex;
+    gap: 0.25rem;
+   
+
+}
+.slider-image{
+    width: 40vw;
+    object-fit: cover;
+    border-radius: 10px;
+    
+   
+}
+.slidera img:first-child{
+margin-left: 0px;
+}
+h1{
+    margin: 20px;
+}
+
+
+@media screen and (max-width:600px) {
+    header .logo{
+        font-size: large;
+        margin-left: 2px;
+    }
+    header ul{
+        float: none;
+        margin: auto;
+        margin-right: 2px;
+        margin-left: -10px;
+        padding: 0px;
+        
+        
+        font-size: 1rem;
+    }
+    .vid{
+       margin-left: 5px;
+       width: 305px;
+       height: 205px;
+       margin-bottom: 20px;
+    }
+    .video1{
+        width: 300px;
+        height: 200px;
+    }
+    .slider{
+        width: 100%;
+        height: 200px;
+    }
+       
+}
+
+footer{
+    margin-top: 90px;
+    font-size: medium;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+}
+footer span{
+    font-size: x-large;
+    color: #fa7000;
+}
+

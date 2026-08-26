@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <section id="hom"> 
+        <h1 >Home</h1>
+    </section>
+</head>
+
+<body>
+    
+    <header class="header">
+        <h1 class="h1">Welcome to my Personal Website</h1>
+       
+        <p>Code is the Best Conversation Between Human and Technologies</p>
+    </Header>
+    
+    <section>
+    <h1 class="h1">Content</h1>
+    <nav class="nav">
+        
+    <ul >
+        <li> <a href="#about">About me</a></li>
+    <li> <a href="#hobies">Hobbies</a></li>
+    <li> <a href="#fav">Favorite Places</a></li>
+    <li> <a href="#contact">Contact Me</a></li>
+    <li> <a href="#smedia">Social Media Accounts</a></li>
+</ul>
+</nav>
+</section>
+    
+
+    <section id="about">
+        <h1 class="h1">About me</h1>
+        <p>Hello my name is Marvin Jay P. Dieego, A Dedicated Student at St.rose Collages Fundation INC, with a Passion for Technology that's Always Pushing me to Learn and Grow. </p>
+    </section>
+
+    <section id="hobies">
+        <h1 class="h1">Hobbies</h1>
+        <p>1.ValleyBall <br>
+           2.Online Games <br>
+           3.Watching Movies<br>
+           4.Listening Music<br>
+           5.Cooking
+        </p>
+        <h1 class="h1">Top 3 Favorate Foods</h1>
+        <table bgcolor="black" width="100%">
+            <tr bgcolor="gray">
+                <th width="100">Food</th>
+                <th width="100">Recipe</th>
+                <th width="100">Rate</th>
+            </tr>
+            <tr bgcolor="lightgray" align="center" tex="black">
+                <td>Chicken</td>
+                <td>Adebayor</td>
+                <td>10/10</td>
+            </tr>
+            <tr bgcolor="lightgray" align="center">
+                <td>Pork</td>
+                <td>Sinigang</td>
+                <td>10/10</td>
+            </tr>
+            <tr bgcolor="lightgray" align="center">
+                <td>Beef</td>
+                <td>Beef Steak</td>
+                <td>9/10</td>
+            </tr>
+        </table>
+    </section>
+
+
+    <section id="fav">
+        <h1 class="h1">Favorite Places</h1>
+        <br>
+        <nav class="gg">
+        <div class="image-container">
+            <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="alaska.jpg" alt="Alaska">
+                <p>Alaska</p>
+            </div>
+            <div class="flip-card-back">
+              
+                <p>The Alaska Borealis, also known as the Northern Lights, is a mesmerizing natural phenomenon that occurs in the night sky, It's a vibrant display of dancing, colored lights that appear as curtains, ribbons, or swirling patterns. </p>
+            
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="image-container">
+            <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="switzerland.jpg" alt="Alaska">
+                <p>Switzerland</p>
+            </div>
+            <div class="flip-card-back">
+                
+                <p>Switzerland is a land of breathtaking contrasts, a tapestry woven with snow-capped peaks, sparkling lakes, rolling green hills, and charming medieval towns.</p>
+
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="image-container">
+            <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="london.jpg" alt="Alaska">
+                <p>London</p>
+            </div>
+            <div class="flip-card-back">
+                
+                <p>London, a city that pulses with a vibrant energy, is a captivating blend of history, culture, and modernity.  It's a place where ancient castles stand proudly alongside gleaming skyscrapers, where cobblestone streets lead to world-class museums and theaters.</p>
+
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="image-container">
+            <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="paris.jpg" alt="Alaska">
+                <p>Paris</p>
+            </div>
+            <div class="flip-card-back">
+                
+                <p>Paris, the City of Lights, is a symphony of romance, elegance, and artistic brilliance.</p>
+
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="image-container">
+            <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="jjj.jpg" alt="Alaska">
+                <p>Japan</p>
+            </div>
+            <div class="flip-card-back">
+                
+                <p>Tokyo: A vibrant metropolis that pulsates with energy, Tokyo is a fusion of ancient traditions and cutting-edge technology.
+                    You sent
+                    Imagine bustling Shibuya Crossing, a dazzling display of neon lights and pedestrian chaos, or the serene Meiji Jingu Shrine, a peaceful oasis amidst the urban sprawl.</p>
+
+            </div>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+    </section>
+
+    <section id="contact">
+        <h1 class="h1">Contact me</h1>
+        <br>
+        <div class="contact-container">
+           
+            <form id="messageform">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required="">
+    <br>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required="">
+    <br>
+                <label for="email">Message:</label>
+                <input type="text" id="message" name="message" class="input-container" required="">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+            <script>
+                 document.querySelectorAll('.flip-card').forEach(function(card) {
+                    card.addEventListener('click', function() {
+                        card.classList.toggle('is-flipped');
+                        card.querySelector('.flip-card-inner').style.transform = card.classList.contains('is-flipped')
+                            ? 'rotateY(180deg)'
+                            : '';
+                    });
+                 });
+
+                 document.getElementById('messageform').addEventListener('submit', function(event) {
+                    event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const mess = document.getElementById('message').value;
+                    
+            const resultDiv = document.getElementById('result');
+             resultDiv.innerHTML = `
+            <h3>Message</h3>
+            <p>Hi ${name} your concern about my website is ${mess}, don't worry i'll do my best to arrange it. 
+                </p>
+            `
+                
+                 });
+            </script>
+               
+    </section>
+
+    <section id="smedia" class="ss">
+        <ul>
+        <h1 class="h1">My Social Media accounts</h1>
+        <li><a href="https://www.facebook.com/marvinjay.diego">FaceBook</a></li>
+        <br>
+        <li><a href="https://www.instagram.com/marvinjay.diego?igsh=YzljYTk1ODg3Zg==">Instagram</a></li>
+
+    </ul>
+    </section>
+    
+   
+     
+</body>
+<footer><p>©2024 Marvin Jay Diego</p></footer>
+</html>

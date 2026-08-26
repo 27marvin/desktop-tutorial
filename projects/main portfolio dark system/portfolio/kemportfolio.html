@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+    }
+
+    .hero {
+      margin-top: -50px;
+      display: grid;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: center;
+      padding: 100px 20px;
+      background: radial-gradient(circle, #1f1f1f, #000);
+    }
+
+    .glow {
+      color: #339f01;
+      text-shadow: 0 0 7px #2e8300, 0 0 20px #00ffff;
+    }
+
+    .btn {
+      background: #00baba;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: -30px;
+      margin-bottom: 40px;
+    }
+    .btn:hover {
+      background: #384042;
+      color: #00ffff;
+    }
+
+    .section {
+      padding: 40px 30px;
+      border-top: 2px solid #333;
+    }
+
+    .edu-list li {
+      margin: 10px 0;
+    }
+    /*animation ups*/
+    .animate-up {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUp 1.5s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      margin-bottom: -50px;
+      text-align: center;
+      padding: 20px;
+      background-color: #00000000;
+      color: #666;
+    }
+
+    .clip1 {
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    a {
+      cursor: pointer;
+    }
+    /* pics*/
+    .profile-card {
+      position: relative;
+      border: solid white 1px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 50px rgba(212, 248, 4, 0.6);
+      border: 4px solid #003400;
+    }
+
+    .profile-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(1.1);
+
+      display: block;
+      object-fit: cover;
+    }
+  </style>
+  <body>
+    <header class="hero animate-up">
+      <div style="justify-content: flex-start; align-items: flex-start">
+        <a href="../1ndex.html" class="btn">Back to Home Page</a><br />
+
+        <h1>Hi, I'm <span class="glow">Kemberly Ringor Silastre</span></h1>
+        <br />
+        <p style="margin-top: -20px">Lasong Camiling Tarlac</p>
+      </div>
+
+      <div style="margin-left: 550px">
+        <!--kem's portfolio-->
+        <div class="clip1">
+          <div
+            style="border-radius: 120px 120px 120px 120px"
+            class="profile-card"
+          >
+            <img
+              style="
+                background: linear-gradient(90deg, #bde4be, #2d6951, #018135);
+              "
+              src="../pics/kem-removebg-preview.png"
+              alt="Kemberly Ringor Silastre"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section animate-up">
+      <h2>About Me</h2>
+      <p>
+        I'm Kemberly currently studying at St. Rose College Educational
+        Foundation Inc. as a third year BSCS student.
+      </p>
+    </section>
+
+    <section class="section animate-up">
+      <h2 class="animate-up">Education</h2>
+      <ul class="edu-list animate-up">
+        <li>Primary:marawi elementary school.</li>
+        <li>Secondary:Marawi National high school.</li>
+        <li>Tertiary: ST.Rose Collages Educational Fundation Inc.</li>
+      </ul>
+    </section>
+
+    <section class="section animate-up">
+      <h2>Hobbies</h2>
+      <div class="project">
+        <li>watching</li>
+        <li>sleeping</li>
+        <li>playing online games</li>
+      </div>
+    </section>
+    <footer>&copy; 2025 Dark System. All rights reserved.</footer>
+  </body>
+</html>
+
+<script>
+  //animation slide ups
+  const animatedElements = document.querySelectorAll(".animate-up");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = "running";
+      }
+    });
+  });
+
+  animatedElements.forEach((el) => {
+    el.style.animationPlayState = "paused";
+    observer.observe(el);
+  });
+</script>
