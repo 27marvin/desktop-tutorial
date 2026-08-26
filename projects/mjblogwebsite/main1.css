@@ -197,5 +197,18 @@ footer span{
     }
 }
 
+@media screen and (max-width: 600px) {
+    body { padding: 0 12px; overflow-x: hidden; }
+    header { height: auto; min-height: 66px; }
+    header .logo { float: none; margin: 0; padding-top: 10px; text-align: center; font-size: clamp(1.4rem, 7vw, 2rem); }
+    header ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 0; padding: 0; justify-content: center; }
+    header ul li a { margin: 0; padding: 8px 7px; font-size: .95rem; }
+    .leave { position: absolute; top: 6px; right: 6px; z-index: 2; }
+    .bod { display: block; margin-top: 42px; font-size: 1rem; }
+    .bod > h1 { margin: 24px 0; font-size: clamp(2rem, 12vw, 3rem); text-align: center; }
+    .pb { width: 100%; margin: 0; padding: 18px; font-size: 1rem; line-height: 1.7; }
+    footer { margin-top: 45px; }
+}
+
 
 

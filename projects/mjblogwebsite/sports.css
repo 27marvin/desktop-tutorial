@@ -173,3 +173,16 @@ footer span{
         margin-left: 2px;
     }
 }
+
+@media screen and (max-width: 600px) {
+    body { margin: 0; padding: 0 12px; overflow-x: hidden; }
+    header { height: auto; min-height: 66px; }
+    header .logo { float: none; margin: 0; padding-top: 10px; text-align: center; font-size: clamp(1.5rem, 8vw, 2.2rem); }
+    header ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0; padding: 0; justify-content: center; }
+    header ul li a { margin: 0; padding: 8px; font-size: .95rem; }
+    .card { width: 100%; max-width: 520px; margin: 24px auto; aspect-ratio: 1 / .7; }
+    .card .content { width: 82%; padding: 12px; }
+    .card .content h2 { font-size: 1.25rem; }
+    .card .content p { font-size: .9rem; line-height: 1.4; }
+    footer { margin-top: 40px; }
+}
